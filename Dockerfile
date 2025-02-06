@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu
 
 # Update the package lists, upgrade existing packages, and install Apache2
 RUN apt update -y && apt upgrade -y && \
