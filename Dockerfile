@@ -12,7 +12,7 @@ RUN sed -i 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf && \
 COPY index.html /var/www/html/
 
 # Expose both port 8080 (for Apache) and 80 (standard HTTP, but not used in this case)
-EXPOSE  80
+EXPOSE  8080
 
 # Start Apache in the foreground
 CMD ["apache2ctl", "-D", "FOREGROUND"]
