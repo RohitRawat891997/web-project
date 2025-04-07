@@ -1,0 +1,13 @@
+FROM docker.io/alpine:3.20
+
+# Alpine uses apk package manager instead of apt
+RUN apk update && \
+    apk add --no-cache apache2
+
+# Alpine Apache uses different default document root
+COPY index.html /var/www/localhost/htdocs/
+
+EXPOSE 80
+
+# Command to run Apache in foreground (correct for Alpine)
+CMD ["httpd", "-DFOREGROUND"]
