@@ -5,7 +5,7 @@ RUN apt update -y && apt upgrade -y && \
     apt install -y apache2
 
 # Modify Apache configuration to listen on port 8080
-RUN sed -i 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf && \
+RUN sed -i 's/Listen 80/Listen 8080/g' /etc/apache2/ports.conf &&  \
     sed -i 's/<VirtualHost *:80>/<VirtualHost *:8080>/g' /etc/apache2/sites-available/000-default.conf
 
 # Copy custom index.html into the web server's document root
