@@ -19,7 +19,7 @@ docker build -t apache-server .
 
 docker  images
 
-docker run -dit --name apache-container -p 80:80 apache-server
+docker run -dit --name apache-container -p 8080:8080 apache-server
 
 docker  ps -a
 
